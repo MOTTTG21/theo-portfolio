@@ -1,0 +1,125 @@
+.walker-stage {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 60px;
+  pointer-events: none;
+  z-index: 40;
+  overflow: hidden;
+}
+
+.walker {
+  position: absolute;
+  bottom: 6px;
+  left: -40px;
+  width: 26px;
+  height: 40px;
+  animation: walk-across 24s linear infinite;
+}
+
+@keyframes walk-across {
+  0% {
+    left: -40px;
+    transform: scaleX(1);
+  }
+  49% {
+    left: calc(100% + 40px);
+    transform: scaleX(1);
+  }
+  50% {
+    left: calc(100% + 40px);
+    transform: scaleX(-1);
+  }
+  99% {
+    left: -40px;
+    transform: scaleX(-1);
+  }
+  100% {
+    left: -40px;
+    transform: scaleX(1);
+  }
+}
+
+.walker-head {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  width: 16px;
+  height: 14px;
+  background: var(--accent-yellow);
+  border: 2px solid var(--border);
+}
+
+.walker-torso {
+  position: absolute;
+  top: 13px;
+  left: 6px;
+  width: 14px;
+  height: 16px;
+  background: var(--accent-pink);
+  border: 2px solid var(--border);
+}
+
+.walker-arm {
+  position: absolute;
+  top: 15px;
+  width: 5px;
+  height: 13px;
+  background: var(--accent-pink);
+  border: 2px solid var(--border);
+  transform-origin: top center;
+  animation: limb-swing 0.7s steps(2) infinite;
+}
+
+.walker-arm.left {
+  left: 1px;
+  animation-delay: 0.35s;
+}
+
+.walker-arm.right {
+  left: 20px;
+}
+
+.walker-leg {
+  position: absolute;
+  top: 27px;
+  width: 6px;
+  height: 13px;
+  background: var(--accent-cyan);
+  border: 2px solid var(--border);
+  transform-origin: top center;
+  animation: limb-swing 0.7s steps(2) infinite;
+}
+
+.walker-leg.left {
+  left: 4px;
+}
+
+.walker-leg.right {
+  left: 16px;
+  animation-delay: 0.35s;
+}
+
+@keyframes limb-swing {
+  0% {
+    transform: rotate(-24deg);
+  }
+  50% {
+    transform: rotate(24deg);
+  }
+  100% {
+    transform: rotate(-24deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .walker {
+    animation: none;
+    left: 24px;
+  }
+  .walker-arm,
+  .walker-leg {
+    animation: none;
+  }
+}

@@ -7,6 +7,7 @@ import { Skills } from "./components/Skills";
 import { Projects } from "./components/Projects";
 import { Education } from "./components/Education";
 import { Footer } from "./components/Footer";
+import { WalkingGuy } from "./components/WalkingGuy";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Education />
       </main>
       <Footer />
+      <WalkingGuy />
     </ThemeProvider>
   );
 }
