@@ -103,7 +103,5 @@ export const projects: Project[] = [
     stack: ["Next.js", "TypeScript", "Tailwind", "FastAPI", "PostgreSQL", "SQLAlchemy"],
     github: "https://github.com/MOTTTG21/box-office-forecaster",
     live: "https://frontend-rho-ashy-79wbl21zmk.vercel.app",
-    highlight:
-      "I backtested my own forecasting model against every real outcome in the database instead of shipping it on vibes — and the backtest caught two real bugs, including one that predicted a Sandra Bullock/Nicole Kidman sequel would open to $50K and another that pegged a 50-minute LEGO short at $100M+. Both are fixed now, with regression tests, and the accuracy number on the site (67% median error) is the real, unflattering one.",
   },
 ];
