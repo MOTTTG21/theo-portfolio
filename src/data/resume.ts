@@ -6,6 +6,7 @@ export const profile = {
     "Software Engineer with 4+ years building complex enterprise platforms in C#, .NET, and SQL — plus a habit of shipping AI-powered side projects for fun. Comfortable owning a feature end to end: backend services, RESTful APIs, and the UI on top. Looking for a startup where I can keep growing as a developer.",
   linkedin: "https://linkedin.com/in/theodoremott",
   email: "motttg@outlook.com",
+  letterboxd: "https://letterboxd.com/motttg/",
   clearance: "Active Secret Security Clearance · CompTIA Security+ (2022–Present)",
 };
 

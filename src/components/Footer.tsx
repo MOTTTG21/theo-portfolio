@@ -13,6 +13,9 @@ export function Footer() {
           <a href={`mailto:${profile.email}`} className="footer-link">
             {profile.email}
           </a>
+          <a href={profile.letterboxd} target="_blank" rel="noopener noreferrer" className="footer-link">
+            Letterboxd
+          </a>
         </div>
         <HitCounter />
         <p className="footer-note retro-only">
