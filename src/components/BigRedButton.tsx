@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useTheme } from "../theme/useTheme";
 import "./BigRedButton.css";
 
 const VIDEO_ID = "dQw4w9WgXcQ";
@@ -16,6 +17,7 @@ function postToPlayer(iframe: HTMLIFrameElement | null, func: string) {
 }
 
 export function BigRedButton() {
+  const { theme } = useTheme();
   const [playing, setPlaying] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const retryTimeouts = useRef<number[]>([]);
@@ -26,6 +28,15 @@ export function BigRedButton() {
   };
 
   useEffect(() => clearPendingRetries, []);
+
+  useEffect(() => {
+    if (theme === "modern") {
+      clearPendingRetries();
+      postToPlayer(iframeRef.current, "pauseVideo");
+      postToPlayer(iframeRef.current, "mute");
+      setPlaying(false); // oxlint-disable-line react/set-state-in-effect -- mirrors stopping the external player, not a derivable render value
+    }
+  }, [theme]);
 
   const handlePress = () => {
     clearPendingRetries();

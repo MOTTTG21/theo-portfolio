@@ -9,6 +9,10 @@
   gap: 10px;
 }
 
+[data-theme="modern"] .red-button-container {
+  display: none;
+}
+
 .red-button-circle {
   position: relative;
   width: 84px;
