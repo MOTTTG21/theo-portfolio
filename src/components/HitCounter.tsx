@@ -1,31 +1,31 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./HitCounter.css";
 
 const STORAGE_KEY = "theo-portfolio-hits";
 const SESSION_KEY = "theo-portfolio-hit-counted";
 const BASE = 41207;
 
-export function HitCounter() {
-  const [count, setCount] = useState(BASE);
+function readAndBumpCount(): number {
+  try {
+    const alreadyCounted = window.sessionStorage.getItem(SESSION_KEY);
+    const stored = Number(window.localStorage.getItem(STORAGE_KEY));
+    const current = Number.isFinite(stored) && stored > 0 ? stored : BASE;
 
-  useEffect(() => {
-    try {
-      const alreadyCounted = window.sessionStorage.getItem(SESSION_KEY);
-      const stored = Number(window.localStorage.getItem(STORAGE_KEY));
-      const current = Number.isFinite(stored) && stored > 0 ? stored : BASE;
-
-      if (!alreadyCounted) {
-        const next = current + 1;
-        window.localStorage.setItem(STORAGE_KEY, String(next));
-        window.sessionStorage.setItem(SESSION_KEY, "1");
-        setCount(next);
-      } else {
-        setCount(current);
-      }
-    } catch {
-      // storage unavailable — static count is fine
+    if (alreadyCounted) {
+      return current;
     }
-  }, []);
+
+    const next = current + 1;
+    window.localStorage.setItem(STORAGE_KEY, String(next));
+    window.sessionStorage.setItem(SESSION_KEY, "1");
+    return next;
+  } catch {
+    return BASE;
+  }
+}
+
+export function HitCounter() {
+  const [count] = useState(readAndBumpCount);
 
   const digits = String(count).padStart(6, "0").split("");
 

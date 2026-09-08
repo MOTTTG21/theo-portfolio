@@ -1,4 +1,4 @@
-import { useTheme } from "../theme/ThemeContext";
+import { useTheme } from "../theme/useTheme";
 import "./ThemeToggle.css";
 
 export function ThemeToggle() {

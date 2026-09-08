@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
 type Props = {
   email: string;
   className?: string;
-  children: (copied: boolean) => React.ReactNode;
+  children: (copied: boolean) => ReactNode;
 };
 
 export function CopyEmailButton({ email, className, children }: Props) {

@@ -1,27 +1,18 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
+import { ThemeContext, THEME_STORAGE_KEY, type Theme } from "./theme-context";
 
-type Theme = "retro" | "modern";
-
-type ThemeContextValue = {
-  theme: Theme;
-  toggle: () => void;
-};
-
-const ThemeContext = createContext<ThemeContextValue | null>(null);
-
-const STORAGE_KEY = "theo-portfolio-theme";
+function getInitialTheme(): Theme {
+  const stored = window.localStorage.getItem(THEME_STORAGE_KEY);
+  return stored === "modern" || stored === "retro" ? stored : "retro";
+}
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window === "undefined") return "retro";
-    const stored = window.localStorage.getItem(STORAGE_KEY);
-    return stored === "modern" || stored === "retro" ? stored : "retro";
-  });
+  const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     try {
-      window.localStorage.setItem(STORAGE_KEY, theme);
+      window.localStorage.setItem(THEME_STORAGE_KEY, theme);
     } catch {
       // localStorage unavailable — theme still works for this session
     }
@@ -30,10 +21,4 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const toggle = () => setTheme((t) => (t === "retro" ? "modern" : "retro"));
 
   return <ThemeContext.Provider value={{ theme, toggle }}>{children}</ThemeContext.Provider>;
-}
-
-export function useTheme() {
-  const ctx = useContext(ThemeContext);
-  if (!ctx) throw new Error("useTheme must be used within a ThemeProvider");
-  return ctx;
 }
