@@ -1,0 +1,37 @@
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  background: var(--accent-yellow);
+  border-top: 3px solid var(--border);
+  border-bottom: 3px solid var(--border);
+  padding: 8px 0;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 22s linear infinite;
+}
+
+.marquee-track span {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  color: var(--bg);
+  white-space: nowrap;
+  padding-right: 40px;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}

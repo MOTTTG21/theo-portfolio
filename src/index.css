@@ -1,0 +1,241 @@
+:root {
+  --bg: #1a0a2e;
+  --bg-alt: #2b0f4e;
+  --panel: #250c46;
+  --text: #f5f0ff;
+  --text-dim: #c9b8e8;
+  --accent-pink: #ff2fa0;
+  --accent-cyan: #00e5ff;
+  --accent-yellow: #ffe600;
+  --accent-orange: #ff7a1a;
+  --border: #ffe600;
+  --shadow-color: #ff2fa0;
+  --font-display: "Press Start 2P", monospace;
+  --font-mono: "VT323", monospace;
+  --font-body: "VT323", monospace;
+  --radius: 4px;
+}
+
+[data-theme="modern"] {
+  --bg: #fafafa;
+  --bg-alt: #ffffff;
+  --panel: #ffffff;
+  --text: #16131f;
+  --text-dim: #5c5670;
+  --accent-pink: #7c3aed;
+  --accent-cyan: #0891b2;
+  --accent-yellow: #d97706;
+  --accent-orange: #dc2626;
+  --border: #e5e0f0;
+  --shadow-color: rgba(124, 58, 237, 0.15);
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "Space Grotesk", sans-serif;
+  --font-body: "Space Grotesk", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+[data-theme="modern"] html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 21px;
+  line-height: 1.5;
+  transition: background 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+[data-theme="modern"] body {
+  font-size: 16px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--accent-pink);
+  color: #fff;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+section {
+  padding: 64px 0;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: var(--accent-yellow);
+  text-shadow: 3px 3px 0 var(--shadow-color);
+  margin-bottom: 32px;
+  letter-spacing: 1px;
+}
+
+[data-theme="modern"] .section-title {
+  font-size: 1.4rem;
+  text-shadow: none;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.retro-only {
+  display: block;
+}
+[data-theme="modern"] .retro-only {
+  display: none;
+}
+.modern-only {
+  display: none;
+}
+[data-theme="modern"] .modern-only {
+  display: block;
+}
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  padding: 14px 22px;
+  text-decoration: none;
+  border: 3px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--accent-pink);
+  color: #fff;
+  box-shadow: 5px 5px 0 var(--shadow-color);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--shadow-color);
+}
+
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--shadow-color);
+}
+
+[data-theme="modern"] .btn {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+[data-theme="modern"] .btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+}
+
+[data-theme="modern"] .btn-outline {
+  color: var(--text);
+  border: 1.5px solid var(--border);
+  box-shadow: none;
+}
+
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  padding: 4px 12px;
+  margin: 4px 6px 4px 0;
+  border: 2px solid var(--accent-cyan);
+  border-radius: 999px;
+  color: var(--accent-cyan);
+}
+
+[data-theme="modern"] .tag {
+  font-size: 0.78rem;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  background: var(--bg);
+}
+
+.card {
+  background: var(--panel);
+  border: 3px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 6px 6px 0 var(--shadow-color);
+}
+
+[data-theme="modern"] .card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.blink {
+  animation: blink 1.2s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+[data-theme="modern"] .blink {
+  animation: none;
+}
+
+.sparkle-field {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+[data-theme="modern"] .sparkle-field {
+  display: none;
+}
+
+.sparkle {
+  position: absolute;
+  color: var(--accent-yellow);
+  animation: twinkle 2.4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}

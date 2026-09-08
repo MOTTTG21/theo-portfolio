@@ -1,0 +1,31 @@
+.hit-counter {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.hit-counter-label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  letter-spacing: 2px;
+}
+
+.hit-counter-digits {
+  display: flex;
+  gap: 3px;
+  background: #000;
+  padding: 6px 10px;
+  border: 2px solid var(--accent-yellow);
+  border-radius: 3px;
+}
+
+.hit-counter-digit {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  color: #ff2fa0;
+  text-shadow: 0 0 6px #ff2fa0;
+  width: 16px;
+  text-align: center;
+}

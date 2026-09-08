@@ -1,0 +1,110 @@
+.hero {
+  position: relative;
+  padding: 32px 0 80px;
+  text-align: center;
+  background: radial-gradient(circle at 50% 0%, var(--bg-alt) 0%, var(--bg) 65%);
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-toggle-row {
+  align-self: flex-end;
+  margin-bottom: 24px;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  color: var(--accent-cyan);
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.hero-name {
+  font-size: 2rem;
+  line-height: 1.4;
+  color: var(--text);
+  text-shadow: 2px 2px 0 var(--accent-pink), 4px 4px 0 var(--accent-cyan);
+  margin-bottom: 20px;
+}
+
+[data-theme="modern"] .hero-name {
+  font-size: 2.6rem;
+  text-shadow: none;
+  font-weight: 700;
+}
+
+.hero-title {
+  font-family: var(--font-mono);
+  font-size: 1.6rem;
+  color: var(--accent-yellow);
+  margin-bottom: 28px;
+}
+
+[data-theme="modern"] .hero-title {
+  font-size: 1.2rem;
+  color: var(--accent-pink);
+  font-weight: 600;
+}
+
+.hero-summary {
+  max-width: 620px;
+  color: var(--text-dim);
+  font-size: 1.15rem;
+  margin-bottom: 36px;
+}
+
+[data-theme="modern"] .hero-summary {
+  font-size: 1.05rem;
+}
+
+.hero-cta-row {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-linkedin-btn {
+  font-size: 1rem;
+  padding: 18px 30px;
+  animation: pulse-glow 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 5px 5px 0 var(--shadow-color);
+  }
+  50% {
+    box-shadow: 5px 5px 0 var(--shadow-color), 0 0 24px var(--accent-pink);
+  }
+}
+
+[data-theme="modern"] .hero-linkedin-btn {
+  animation: pulse-glow-modern 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow-modern {
+  0%, 100% {
+    box-shadow: 0 2px 8px var(--shadow-color);
+  }
+  50% {
+    box-shadow: 0 6px 20px var(--shadow-color);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-linkedin-btn {
+    animation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-name {
+    font-size: 1.4rem;
+  }
+}

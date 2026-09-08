@@ -1,0 +1,34 @@
+.education-card {
+  text-align: left;
+}
+
+.education-degree {
+  font-size: 1.1rem;
+  color: var(--accent-cyan);
+  margin: 0 0 6px;
+}
+
+[data-theme="modern"] .education-degree {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.education-school {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--text-dim);
+  margin: 0 0 12px;
+}
+
+.education-clearance {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--accent-yellow);
+  margin: 0;
+}
+
+[data-theme="modern"] .education-clearance {
+  color: var(--accent-pink);
+  font-weight: 600;
+  font-size: 0.9rem;
+}

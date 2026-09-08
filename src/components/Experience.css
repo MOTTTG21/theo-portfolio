@@ -1,0 +1,65 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.job-card {
+  text-align: left;
+}
+
+.job-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.job-role {
+  font-size: 1.1rem;
+  color: var(--accent-cyan);
+}
+
+[data-theme="modern"] .job-role {
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.job-period {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--text-dim);
+}
+
+.job-company {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  color: var(--accent-yellow);
+  margin: 0 0 16px;
+}
+
+[data-theme="modern"] .job-company {
+  font-size: 0.95rem;
+  color: var(--accent-pink);
+  font-weight: 600;
+}
+
+.job-bullets {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-dim);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.job-bullets li {
+  font-size: 1rem;
+}
+
+[data-theme="modern"] .job-bullets li {
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
