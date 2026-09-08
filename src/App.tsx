@@ -8,6 +8,7 @@ import { Projects } from "./components/Projects";
 import { Education } from "./components/Education";
 import { Footer } from "./components/Footer";
 import { WalkingGuy } from "./components/WalkingGuy";
+import { BigRedButton } from "./components/BigRedButton";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       </main>
       <Footer />
       <WalkingGuy />
+      <BigRedButton />
     </ThemeProvider>
   );
 }
