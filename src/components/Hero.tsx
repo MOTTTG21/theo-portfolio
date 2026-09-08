@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { profile } from "../data/resume";
 import { ThemeToggle } from "./ThemeToggle";
+import { CopyEmailButton } from "./CopyEmailButton";
 import "./Hero.css";
 
 export function Hero() {
@@ -61,9 +62,9 @@ export function Hero() {
           >
             View my LinkedIn →
           </a>
-          <a className="btn btn-outline" href={`mailto:${profile.email}`}>
-            Email me
-          </a>
+          <CopyEmailButton email={profile.email} className="btn btn-outline">
+            {(copied) => (copied ? "Copied! ✓" : "Email me")}
+          </CopyEmailButton>
         </motion.div>
       </div>
     </header>

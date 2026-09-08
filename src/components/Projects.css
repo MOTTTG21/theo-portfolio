@@ -52,6 +52,25 @@
   line-height: 1.6;
 }
 
+.project-highlight {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--bg);
+  border-left: 3px solid var(--accent-yellow);
+  padding: 10px 14px;
+  margin: 0 0 16px;
+}
+
+[data-theme="modern"] .project-highlight {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  border-left-color: var(--accent-pink);
+  background: var(--bg-alt);
+  border-radius: 0 6px 6px 0;
+}
+
 .project-tags {
   display: flex;
   flex-wrap: wrap;

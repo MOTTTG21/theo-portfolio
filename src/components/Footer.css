@@ -36,6 +36,12 @@
   border-bottom: 1px solid var(--border);
 }
 
+.footer-link-button {
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
 .footer-note {
   font-family: var(--font-mono);
   font-size: 0.9rem;

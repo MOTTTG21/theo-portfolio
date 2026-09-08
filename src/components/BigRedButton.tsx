@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import "./BigRedButton.css";
 
 const VIDEO_ID = "dQw4w9WgXcQ";
-const EMBED_SRC = `https://www.youtube.com/embed/${VIDEO_ID}?enablejsapi=1&autoplay=0&mute=1&playsinline=1&rel=0&controls=0`;
+const EMBED_SRC = `https://www.youtube-nocookie.com/embed/${VIDEO_ID}?enablejsapi=1&autoplay=0&mute=1&playsinline=1&rel=0&controls=0`;
 
 function postToPlayer(iframe: HTMLIFrameElement | null, func: string) {
   iframe?.contentWindow?.postMessage(JSON.stringify({ event: "command", func, args: [] }), "*");

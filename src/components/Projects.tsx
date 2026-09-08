@@ -21,6 +21,7 @@ export function Projects() {
               <h3 className="project-name">{project.name}</h3>
               <p className="project-tagline">{project.tagline}</p>
               <p className="project-description">{project.description}</p>
+              {project.highlight && <p className="project-highlight">{project.highlight}</p>}
               <div className="project-tags">
                 {project.stack.map((s) => (
                   <span className="tag" key={s}>

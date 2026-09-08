@@ -1,5 +1,6 @@
 import { profile } from "../data/resume";
 import { HitCounter } from "./HitCounter";
+import { CopyEmailButton } from "./CopyEmailButton";
 import "./Footer.css";
 
 export function Footer() {
@@ -10,9 +11,9 @@ export function Footer() {
           <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="footer-link">
             LinkedIn
           </a>
-          <a href={`mailto:${profile.email}`} className="footer-link">
-            {profile.email}
-          </a>
+          <CopyEmailButton email={profile.email} className="footer-link footer-link-button">
+            {(copied) => (copied ? "Copied! ✓" : profile.email)}
+          </CopyEmailButton>
           <a href={profile.letterboxd} target="_blank" rel="noopener noreferrer" className="footer-link">
             Letterboxd
           </a>
