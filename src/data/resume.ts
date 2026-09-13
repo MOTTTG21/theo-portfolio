@@ -104,4 +104,13 @@ export const projects: Project[] = [
     github: "https://github.com/MOTTTG21/box-office-forecaster",
     live: "https://frontend-rho-ashy-79wbl21zmk.vercel.app",
   },
+  {
+    name: "Lead the Horse to Water",
+    tagline: "A real MCP gateway with identity-aware access control, wearing a game as a disguise.",
+    description:
+      "Chat with an AI-controlled horse and try to get it to drink water it's not authorized to have — the horse is persuadable, but it isn't the security boundary. Underneath is a real policy-enforcement gateway (identity check → policy check → audit log → execute) with a genuine, named Confused Deputy vulnerability: one action skips the same re-check every other action goes through. A trust meter and a field guide that unlocks as you play teach the actual concepts as you find them, not before.",
+    stack: ["Python", "FastAPI", "SQLAlchemy", "PostgreSQL", "Claude API", "Auth0", "Docker", "GCP Cloud Run", "GCP Secret Manager"],
+    github: "https://github.com/MOTTTG21/lead-horse-to-water",
+    live: "https://horse-gateway-145508508036.us-central1.run.app",
+  },
 ];
